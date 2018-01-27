@@ -1,0 +1,15 @@
+<div class="viewer">
+  <div class="header" ng-hide="!closing">
+    <span class="fui-arrow-left expand"></span>
+  </div>
+  <div class="content">
+    <span class="inspect-image-caption">{{caption}} <span class="fui-cross close" ng-hide="closing"></span> </span>
+    <img class="inspect-image" ng-src="{{imagesrc}}" ng-click="clickImage()">
+    </img>
+    <span ng-hide="closing" ng-click="leftclick()" ng-style="arrowStyle" class="fui-arrow-left arrow-left"></span>
+    <span ng-hide="closing" ng-click="rightclick()" ng-style="arrowStyle" class="fui-arrow-right arrow-right"></span>
+    <!--<div class="buckets">
+      <img ng-repeat="image in imageBuckets track by $index" class="thumbnail" ng-src={{base+image.id}}></img>
+    </div>-->
+  </div>
+</div>

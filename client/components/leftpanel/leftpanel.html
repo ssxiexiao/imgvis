@@ -1,0 +1,51 @@
+<div class="form-group search-bar">
+<div class="input-group">
+  <span class="input-group-addon">
+    <span class="fui-list" ng-click="$ctrl.dashboardvisible = ($ctrl.dashboardvisible + 1)%2;"></span>
+  </span>
+    <form ng-submit="$ctrl.locateWord()">
+      <input class="form-control" id="search-keyword" type="text" placeholder="Search" ng-model="$ctrl.text">
+    </form>
+    <span class="input-group-btn search-submit" ng-click="$ctrl.locateWord()">
+        <button type="submit" class="btn"><span class="fui-search"></span></button>
+    </span>
+</div>
+</div>
+
+<div class="dashboard" ng-class="$ctrl.dashboardvisible === 0 ? 'dashboard-hidden' : '' ">
+<div class="selection">
+  <div class="selection-group">
+    <div class="selection-addon">
+      <!--<span class="fui-document icon"></span>-->
+      <span class="title">Select Word</span>
+      <span class="fui-plus-circle icon"></span>
+    </div>
+    <ul class="menu">
+      <li ng-repeat="word in $ctrl.keywords track by $index"><a href="#">
+        {{word[0]}}
+        <span class="action">
+          <span class="glyphicon" ng-class="word[1] === 'plus' ? 'glyphicon-plus' : 'glyphicon-minus' " ng-click="$ctrl.switchAction($index, 'word');"></span>
+          <span class="glyphicon glyphicon-remove" ng-click="$ctrl.deleteQuery($index, 'word');"></span>
+        </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="selection-group">
+    <div class="selection-addon">
+      <!--<span class="fui-image icon"></span>-->
+      <span class="title">Select Image</span>
+    </div>
+    <ul class="menu">
+      <li ng-repeat="image in $ctrl.keyimages track by $index">
+        <a href="#" ng-click="$ctrl.locateImage(image[0].id)">
+        {{image[0].id.split('_')[2]}}
+        <span class="action">
+          <span class="glyphicon" ng-class="image[1] === 'plus' ? 'glyphicon-plus' : 'glyphicon-minus' " ng-click="$ctrl.switchAction($index, 'image');"></span>
+          <span class="glyphicon glyphicon-remove" ng-click="$ctrl.deleteQuery($index, 'image');"></span>
+        </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

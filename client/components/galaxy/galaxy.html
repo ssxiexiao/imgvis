@@ -1,0 +1,26 @@
+<svg style="width: 100%; height: 100%;" msd-wheel="$ctrl.$onWheel($event, $deltaX, $deltaY)" msd-drag="$ctrl.$onDrag($event, $X, $Y)">
+   <!--star container-->
+    <g class="stars">
+      <text ng-repeat="star in $ctrl.stars track by star._data_.word | orderBy:'zindex'"
+        dominant-baseline="middle"
+        ng-class="{ 'click': $ctrl.focusing.text === star._data_.word, 'star': 1 }"
+        ng-attr-x="{{star.x}}" ng-attr-y="{{star.y}}"
+        ng-click="$ctrl.$onStarClick(star)"
+        ng-dblclick="$ctrl.$onStarDblclick(star)"
+        ng-mouseover="$ctrl.$onStarHover(star)"
+        ng-mouseleave="$ctrl.$onStarLeave(star)">
+        {{star._data_.word}}
+      </text>
+    </g>
+
+    <g class="focus-star" ng-attr-transform="{{$ctrl.focusing.transform}}">
+      <g ng-repeat="planet in $ctrl.planets track by $index">
+        <clipPath id="{{'clip-'+$index}}">
+          <circle ng-attr-r="{{planet.r}}" ng-attr-cx="{{planet.cx}}" ng-attr-cy="{{planet.cy}}"></circle>
+        </clipPath>
+        <image ng-attr-clip-path="{{'url(#clip-'+$index+')'}}" ng-href="{{$ctrl.trustSrc(planet.xlink)}}" x="0" y="0" xlink:href=""
+        ng-attr-width="{{planet.width}}" ng-attr-height="{{planet.height}}" ng-attr-transform="{{planet.transform}}">
+        </image>
+      </g>
+    </g>
+</svg>

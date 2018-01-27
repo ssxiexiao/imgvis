@@ -1,0 +1,1 @@
+cmd_Release/obj.target/tsne.addon.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=tsne.addon.node -o Release/obj.target/tsne.addon.node -Wl,--start-group Release/obj.target/tsne.addon/main.o Release/obj.target/tsne.addon/quadtree.o -Wl,--end-group 

@@ -1,0 +1,14 @@
+bucket {
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	top: calc(100% - 400px);
+	left: calc(#{$dashboard-width});
+  z-index: 400;
+}
+
+.bucket {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(51, 51, 51);
+}

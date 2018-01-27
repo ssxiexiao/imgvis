@@ -1,0 +1,100 @@
+
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  overflow: hidden;
+  font-family: "Lato";
+}
+
+* {
+  position: relative;
+  font-family: inherit;
+}
+
+body > div {
+  width: 100%;
+  // height: calc(100% - 53px);
+  // margin-top: -30px;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.vis {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+}
+
+densemap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+scatterplot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 200; 
+}
+
+galaxy {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 300;
+}
+
+solar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 400;  
+}

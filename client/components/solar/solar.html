@@ -1,0 +1,14 @@
+<svg style="width: 100%; height: 100%;">
+  <clipPath ng-repeat="planet in $ctrl.planets track by $index">
+    <circle ng-attr-r="{{planet.r}}" ng-attr-cx="{{ng-attr-cx}}" ng-attr-cy="{{ng-attr-cy}}"></circle>
+  </clipPath>
+
+  <g ng-repeat="planet in $ctrl.planets track by $index">
+    <clipPath id="{{'clip-'+$index}}">
+      <circle ng-attr-r="{{planet.r}}" ng-attr-cx="{{planet.cx}}" ng-attr-cy="{{planet.cy}}"></circle>
+    </clipPath>
+    <image ng-attr-width="{{planet.width}}" ng-attr-height="{{planet.height}}"
+      ng-attr-transform="{{planet.transform}}" ng-attr-xlink:href="{{planet.xlink}}">
+    </image>
+  </g>
+</svg>

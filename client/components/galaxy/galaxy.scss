@@ -1,0 +1,19 @@
+.star {
+  font-size: 15px;
+  cursor: pointer;
+  text-anchor: middle;
+  transition: font-size .5s;
+  fill: white;
+}
+
+.star:hover {
+  font-size: 25px;
+  font-style: bold;
+  fill: #FED731;
+}
+
+.star.click {
+  font-size: 25px;
+  font-style: bold;
+  fill: #FED731;  
+}
